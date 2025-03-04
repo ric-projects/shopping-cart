@@ -1,6 +1,16 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.topBanner {
+  border: 2px solid gray;
+  border-radius: 20px;
+  width: 400px;
+  margin: 150px;
+  padding: 20px;
 }

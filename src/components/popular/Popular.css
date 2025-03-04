@@ -1,0 +1,13 @@
+.wrap {
+  border: 2px solid gray;
+  border-radius: 20px;
+  width: 800px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap > div {
+  margin: 50px;
+}
