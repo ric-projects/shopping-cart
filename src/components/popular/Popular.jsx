@@ -1,12 +1,18 @@
 import "./Popular.css";
 
-const Popular = () => {
+const Popular = ({ allItems }) => {
   return (
     <div className="wrap">
-      <div>Item1</div>
-      <div>Item2</div>
-      <div>Item3</div>
-      <div>Item4</div>
+      {allItems !== undefined ? (
+        <>
+          <div>{allItems[0].title}</div>
+          <div>{allItems[1].title}</div>
+          <div>{allItems[2].title}</div>
+          <div>{allItems[3].title}</div>
+        </>
+      ) : (
+        <div>Loading</div>
+      )}
     </div>
   );
 };

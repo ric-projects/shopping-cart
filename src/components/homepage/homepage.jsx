@@ -1,8 +1,28 @@
+import { useEffect, useState } from "react";
 import "./homepage.css";
 import Navbar from "../navbar/navbar";
 import Popular from "../popular/Popular";
 
 const Homepage = () => {
+  const [allItems, setAllItems] = useState(undefined);
+
+  useEffect(() => {
+    if (allItems === undefined) {
+      const dataFetch = async () => {
+        const data = await fetch("https://fakestoreapi.com/products", {
+          mode: "cors",
+        }).then((response) => {
+          return response.json();
+        });
+
+        console.log(data);
+        setAllItems(data);
+        // setAllItems(result);
+      };
+      dataFetch();
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -13,7 +33,7 @@ const Homepage = () => {
         and all of the prices are generated to imitate a real shop. <br />
         Enjoy! 😄
       </div>
-      <Popular />
+      <Popular allItems={allItems} />
     </>
   );
 };
