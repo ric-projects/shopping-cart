@@ -2,26 +2,30 @@ import { useEffect, useState } from "react";
 import "./homepage.css";
 import Navbar from "../navbar/navbar";
 import Popular from "../popular/Popular";
+import { useData } from "../dataContext";
 
 const Homepage = () => {
-  const [allItems, setAllItems] = useState(undefined);
+  // const [allItems, setAllItems] = useState(undefined);
 
-  useEffect(() => {
-    if (allItems === undefined) {
-      const dataFetch = async () => {
-        const data = await fetch("https://fakestoreapi.com/products", {
-          mode: "cors",
-        }).then((response) => {
-          return response.json();
-        });
+  // useEffect(() => {
+  //   if (allItems === undefined) {
+  //     const dataFetch = async () => {
+  //       const data = await fetch("https://fakestoreapi.com/products", {
+  //         mode: "cors",
+  //       }).then((response) => {
+  //         return response.json();
+  //       });
 
-        console.log(data);
-        setAllItems(data);
-        // setAllItems(result);
-      };
-      dataFetch();
-    }
-  }, []);
+  //       console.log(data);
+  //       setAllItems(data);
+  //       // setAllItems(result);
+  //     };
+  //     dataFetch();
+  //   }
+  // }, []);
+
+  const allItems = useData();
+  // console.log(allItems.logg);
 
   return (
     <>

@@ -1,3 +1,4 @@
+import Cards from "../cards/Cards";
 import "./Popular.css";
 
 const Popular = ({ allItems }) => {
@@ -5,10 +6,10 @@ const Popular = ({ allItems }) => {
     <div className="wrap">
       {allItems !== undefined ? (
         <>
-          <div>{allItems[0].title}</div>
-          <div>{allItems[1].title}</div>
-          <div>{allItems[2].title}</div>
-          <div>{allItems[3].title}</div>
+          <Cards item={allItems[0]} />
+          <Cards item={allItems[1]} />
+          <Cards item={allItems[2]} />
+          <Cards item={allItems[3]} />
         </>
       ) : (
         <div>Loading</div>
