@@ -28,3 +28,7 @@ img {
   height: 40px;
   position: relative;
 }
+
+.cartBtn {
+  cursor: pointer;
+}

@@ -8,14 +8,18 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 const ShopPage = () => {
   const allItems = useData();
 
-  const [myCart, setMyCart] = useState([]);
+  const [myCart, setMyCart] = useState(allItems);
   const addToCart = (item) => {
     item.quantity++;
-    setMyCart([...myCart, item]);
+    console.log(item);
+    const newCart = myCart;
+    setMyCart([...newCart]);
   };
   const removeFromCart = (item) => {
-    item.quantity--;
-    setMyCart([...myCart, item]);
+    if (item.quantity > 0) {
+      item.quantity--;
+      setMyCart([...myCart, item]);
+    }
   };
 
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -25,7 +29,15 @@ const ShopPage = () => {
   let allCards = [];
   if (allItems !== undefined) {
     for (let i = 0; i < 20; i++) {
-      allCards[i] = <Cards key={i} item={allItems[i]} />;
+      allCards[i] = (
+        <Cards
+          key={i}
+          item={allItems[i]}
+          myCart={myCart}
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+        />
+      );
     }
   }
 

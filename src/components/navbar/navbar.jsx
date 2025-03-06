@@ -8,7 +8,7 @@ const Navbar = ({ openCart }) => {
         <NavLink to="/">Home Page</NavLink>
         <NavLink to="/shoppage">Shop</NavLink>
       </div>
-      <a onClick={() => openCart()}>
+      <a className="cartBtn" onClick={() => openCart()}>
         <img src="/cart-shopping-svgrepo-com.svg" />
       </a>
     </nav>

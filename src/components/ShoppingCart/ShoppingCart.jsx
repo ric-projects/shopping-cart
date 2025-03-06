@@ -7,6 +7,15 @@ const ShoppingCart = ({
   addToCart,
   removeFromCart,
 }) => {
+  let totalItems;
+  if (myCart !== undefined) {
+    totalItems = myCart.reduce(sumItems, 0);
+  }
+
+  function sumItems(total, item) {
+    return total + item.quantity;
+  }
+
   if (!isOpen) return null;
 
   return (
@@ -16,7 +25,7 @@ const ShoppingCart = ({
           X
         </button>
         <h3>My Cart</h3>
-        Items in Cart:{" " + myCart.length}
+        Items in Cart:{" " + totalItems}
       </div>
     </div>
   );

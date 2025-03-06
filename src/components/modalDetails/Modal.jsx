@@ -1,6 +1,6 @@
 import "./Modal.css";
 
-const ModalDetails = ({ isOpen, onClose, item }) => {
+const ModalDetails = ({ isOpen, onClose, item, addToCart, removeFromCart }) => {
   if (!isOpen) return null;
 
   return (
@@ -14,6 +14,14 @@ const ModalDetails = ({ isOpen, onClose, item }) => {
         {item.description}
         <br />
         <br />${item.price}
+        <br />
+        <button className="cart-btn" onClick={() => removeFromCart(item)}>
+          -
+        </button>
+        {" " + item.quantity + " "}
+        <button className="cart-btn" onClick={() => addToCart(item)}>
+          +
+        </button>
       </div>
     </div>
   );
