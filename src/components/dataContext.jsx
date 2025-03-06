@@ -15,6 +15,9 @@ export const ItemsDataProvider = ({ children }) => {
           return response.json();
         });
 
+        data.forEach((element) => {
+          element.quantity = 0;
+        });
         console.log(data);
         setAllItems(data);
         // setAllItems(result);

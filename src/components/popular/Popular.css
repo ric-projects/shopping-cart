@@ -2,12 +2,15 @@
   border: 2px solid gray;
   border-radius: 20px;
   width: 800px;
-  height: 200px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .wrap > div {
-  margin: 50px;
+  margin: 20px;
+  border: 0;
+  height: 200px;
+  padding: 0;
 }
