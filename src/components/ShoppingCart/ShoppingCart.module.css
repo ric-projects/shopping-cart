@@ -1,0 +1,7 @@
+.cartModal {
+  background-color: white;
+  height: 100vh;
+  width: 500px;
+  position: absolute;
+  right: 0;
+}

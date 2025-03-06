@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ openCart }) => {
   return (
     <nav>
       <div className="links">
         <NavLink to="/">Home Page</NavLink>
         <NavLink to="/shoppage">Shop</NavLink>
       </div>
-      <a href="">
+      <a onClick={() => openCart()}>
         <img src="/cart-shopping-svgrepo-com.svg" />
       </a>
     </nav>
