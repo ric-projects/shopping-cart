@@ -1,6 +1,6 @@
+import { useData } from "../dataContext";
 import styles from "./shoppage.module.css";
 import Navbar from "../navbar/navbar";
-import { useData } from "../dataContext";
 import Cards from "../cards/Cards";
 import { useState } from "react";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
@@ -43,7 +43,11 @@ const ShopPage = () => {
 
   return (
     <>
-      <Navbar openCart={openCart} />
+      {allItems !== undefined ? (
+        <Navbar openCart={openCart} />
+      ) : (
+        <>Loading...</>
+      )}
       {allItems !== undefined ? (
         <>
           <h1>Shop Now</h1>
@@ -53,13 +57,17 @@ const ShopPage = () => {
       ) : (
         <>Loading...</>
       )}
-      <ShoppingCart
-        isOpen={isCartOpen}
-        onClose={closeCart}
-        myCart={myCart}
-        addToCart={addToCart}
-        removeFromCart={removeFromCart}
-      />
+      {allItems !== undefined ? (
+        <ShoppingCart
+          isOpen={isCartOpen}
+          onClose={closeCart}
+          myCart={myCart}
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+        />
+      ) : (
+        <>Loading...</>
+      )}
     </>
   );
 };
