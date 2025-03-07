@@ -11,15 +11,19 @@ const ShopPage = () => {
   const [myCart, setMyCart] = useState(allItems);
   const addToCart = (item) => {
     item.quantity++;
-    console.log(item);
+    // console.log(item);
     const newCart = myCart;
     setMyCart([...newCart]);
   };
   const removeFromCart = (item) => {
     if (item.quantity > 0) {
       item.quantity--;
-      setMyCart([...myCart, item]);
+      setMyCart([...myCart]);
     }
+  };
+  const changeQuantity = (item, value) => {
+    if (value > 0) item.quantity = Number(value);
+    setMyCart([...myCart]);
   };
 
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -36,6 +40,7 @@ const ShopPage = () => {
           myCart={myCart}
           addToCart={addToCart}
           removeFromCart={removeFromCart}
+          changeQuantity={changeQuantity}
         />
       );
     }

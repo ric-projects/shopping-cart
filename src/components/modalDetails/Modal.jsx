@@ -1,6 +1,13 @@
 import "./Modal.css";
 
-const ModalDetails = ({ isOpen, onClose, item, addToCart, removeFromCart }) => {
+const ModalDetails = ({
+  isOpen,
+  onClose,
+  item,
+  addToCart,
+  removeFromCart,
+  changeQuantity,
+}) => {
   if (!isOpen) return null;
 
   return (
@@ -18,7 +25,11 @@ const ModalDetails = ({ isOpen, onClose, item, addToCart, removeFromCart }) => {
         <button className="cart-btn" onClick={() => removeFromCart(item)}>
           -
         </button>
-        {" " + item.quantity + " "}
+        <input
+          type="number"
+          value={item.quantity}
+          onChange={(e) => changeQuantity(item, e.target.value)}
+        />
         <button className="cart-btn" onClick={() => addToCart(item)}>
           +
         </button>
