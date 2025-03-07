@@ -1,5 +1,6 @@
 import Cards from "../cards/Cards";
 import "./Popular.css";
+import PropTypes from "prop-types";
 
 const Popular = ({ allItems }) => {
   return (
@@ -16,6 +17,10 @@ const Popular = ({ allItems }) => {
       )}
     </div>
   );
+};
+
+Popular.propTypes = {
+  allItems: PropTypes.array,
 };
 
 export default Popular;

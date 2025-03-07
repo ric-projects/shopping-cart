@@ -1,4 +1,5 @@
 import "./CartCards.css";
+import PropTypes from "prop-types";
 
 const CartCards = ({ item }) => {
   return (
@@ -11,6 +12,10 @@ const CartCards = ({ item }) => {
       </div>
     </>
   );
+};
+
+CartCards.propTypes = {
+  item: PropTypes.objectOf(PropTypes.string, PropTypes.number),
 };
 
 export default CartCards;

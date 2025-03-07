@@ -1,6 +1,5 @@
 .wrap {
   display: flex;
-  /* overflow: auto; */
   gap: 30px;
   padding: 20px;
   max-width: 800px;

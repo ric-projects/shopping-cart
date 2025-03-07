@@ -11,7 +11,6 @@ const ShopPage = () => {
   const [myCart, setMyCart] = useState(allItems);
   const addToCart = (item) => {
     item.quantity++;
-    // console.log(item);
     const newCart = myCart;
     setMyCart([...newCart]);
   };

@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import React from "react";
+import PropTypes from "prop-types";
 
 const Context = React.createContext();
 
@@ -26,9 +27,11 @@ export const ItemsDataProvider = ({ children }) => {
     }
   }, [allItems]);
 
-  //   const logg = () => console.log(allItems);
-
   return <Context.Provider value={allItems}>{children}</Context.Provider>;
+};
+
+ItemsDataProvider.propTypes = {
+  children: PropTypes.node,
 };
 
 export const useData = () => useContext(Context);

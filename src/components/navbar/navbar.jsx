@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
+import PropTypes from "prop-types";
 
 const Navbar = ({ openCart }) => {
   return (
@@ -17,6 +18,10 @@ const Navbar = ({ openCart }) => {
       )}
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  openCart: PropTypes.func,
 };
 
 export default Navbar;

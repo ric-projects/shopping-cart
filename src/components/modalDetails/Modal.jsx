@@ -1,4 +1,5 @@
 import "./Modal.css";
+import PropTypes from "prop-types";
 
 const ModalDetails = ({
   isOpen,
@@ -36,6 +37,15 @@ const ModalDetails = ({
       </div>
     </div>
   );
+};
+
+ModalDetails.propTypes = {
+  item: PropTypes.objectOf(PropTypes.string, PropTypes.number),
+  isOpen: PropTypes.bool,
+  addToCart: PropTypes.func,
+  removeFromCart: PropTypes.func,
+  onClose: PropTypes.func,
+  changeQuantity: PropTypes.func,
 };
 
 export default ModalDetails;

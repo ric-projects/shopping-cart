@@ -1,12 +1,13 @@
 import CartCards from "../CartCards/CartCards";
 import styles from "./ShoppingCart.module.css";
+import PropTypes from "prop-types";
 
 const ShoppingCart = ({
   isOpen,
   onClose,
   myCart,
-  addToCart,
-  removeFromCart,
+  // addToCart,
+  // removeFromCart,
 }) => {
   let totalItems;
   if (myCart !== undefined) {
@@ -50,6 +51,12 @@ const ShoppingCart = ({
       </div>
     </div>
   );
+};
+
+ShoppingCart.propTypes = {
+  isOpen: PropTypes.func,
+  onClose: PropTypes.func,
+  myCart: PropTypes.array,
 };
 
 export default ShoppingCart;
